@@ -30,6 +30,29 @@
                 max-width: 100%;
                 height: auto;
             }
+            /* Regenbogenfarbene, blinkende Schrift */
+        @keyframes rainbow {
+            0% { color: red; }
+            14% { color: orange; }
+            28% { color: yellow; }
+            42% { color: green; }
+            57% { color: blue; }
+            71% { color: indigo; }
+            85% { color: violet; }
+            100% { color: red; }
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .marquee-text {
+            font-size: 2em;
+            font-weight: bold;
+            animation: rainbow 3s infinite, blink 1s infinite;
+        }
         </style>
     </head>
     <body>
@@ -42,6 +65,10 @@
            Und so tanzten der Tiger, der Affe und selbst die langsame Schildkröte die ganze Nacht zu den coolen Beats von FunkyAlpaca!</p>
     
         <img src="https://github.com/secure73/moonwalker/blob/main/pic/funkyAlpaca%233.jpg?raw=true" alt="FunkyAlpaca">
-    
+            
+        <marquee behavior="scroll" direction="left" scrollamount="10">
+            <span class="marquee-text">Das Funky Alpaca ist die coolste Party-Sensation im Dschungel!</span>
+        </marquee>
+        
     </body>
 </html>
